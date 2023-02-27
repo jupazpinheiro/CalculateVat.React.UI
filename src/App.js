@@ -129,93 +129,45 @@ function CalculateVat() {
 
   return (
     <>
-      <img src={logo} alt="logo lamp calculate" width="100" height="100" />
+      <img src={logo} alt="logo lamp calculate" width="100" height="100" className='center'/>
       <h2>Calculate VAT</h2>
-      <div className="SameLine">
+      <div>
         <form /*className={style.root}*/>
+          <div className="SameLineTitle">
           <label> Country: </label>
+          </div>
+          <div class="SameLine">
           <CountriesDropdown countries={countries} onChange={e => setCountryId(e.target.value)} />
+          </div>
           {countries && countryId && <RadioGroupRates countryId={countryId} handleChange={handleChange} />}
-          {/* <Input
-            labelText="Amount"
-            onChange={(e) => setAmount(e.target.value)}
-            id="amount"
-            type="number"
-            value={amount}
-            random
-            isValid={amountIsValid}
-            validationText="Please enter a number greater than 0"
+
+          <div className="SameLineTitle">
+          <label> Price without VAT </label>
+          </div>
+          <div class="SameLine">
+          <input
+            labelText=""
           />
-          <Input
-            labelText="VAT Rate %"
-            onChange={(e) => setVatRate(e.target.value)}
-            id="vat-rate"
-            type="number"
-            value={vatRate}
-            isValid={vatRateIsValid}
-            validationText="Please enter a vat rate, e.g. 17.5"
+          </div>
+          <div className="SameLineTitle">
+          <label> Value Added Tax </label>
+          </div>
+          <div class="SameLine">
+          <input
+            labelText=""
           />
-          <div className={style.buttonWrapper}>
-            <Button onClick={() => scrollToResult(netRef)} importance="primary">
-              Add VAT
-            </Button>
-            <div className={style.buttonDivider}>Or</div>
-            <Button
-              onClick={() => scrollToResult(grossRef)}
-              importance="secondary"
-            >
-              Remove VAT
-            </Button>
-          </div> */}
+          </div>
+          <div className="SameLineTitle">
+          <label> Price incl. VAT </label>
+          </div>
+          <div class="SameLine">
+          <input
+            labelText=""
+          />
+          </div>
+          
         </form>
-        {/* <div ref={netRef} id="net-results" className={style.result}>
-          <h2>Results when adding vat</h2>
-          <Input
-            labelText="Net amount (excluding VAT)"
-            id="net-amount"
-            type="text"
-            value={twoDecimals(amount)}
-            readOnly
-          />
-          <Input
-            labelText={`VAT at (${vatRate}%)`}
-            id="vat-rate-2"
-            type="text"
-            value={twoDecimals(amountIncludingVat - Number(amount))}
-            readOnly
-          />
-          <Input
-            labelText="Gross amount (including VAT)"
-            id="gross-amount"
-            type="text"
-            value={twoDecimals(amountIncludingVat)}
-            readOnly
-          />
-        </div>
-        <div ref={grossRef} id="gross-results" className={style.result}>
-          <h2>Results when removing vat</h2>
-          <Input
-            labelText="Gross amount (including VAT)"
-            id="gross-amount-2"
-            type="text"
-            value={twoDecimals(amount)}
-            readOnly
-          />
-          <Input
-            labelText={`VAT at (${vatRate}%)`}
-            id="vat-rate-3"
-            type="text"
-            value={twoDecimals(Number(amount) - amountExcludingVat)}
-            readOnly
-          />
-          <Input
-            labelText="Net amount (excluding VAT)"
-            id="net-amount-2"
-            type="text"
-            value={twoDecimals(amountExcludingVat)}
-            readOnly
-          />
-        </div> */}
+        
       </div>
     </>
   );
